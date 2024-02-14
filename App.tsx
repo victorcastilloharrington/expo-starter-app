@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, useColorScheme } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useFonts, Poppins_800ExtraBold, Poppins_400Regular } from '@expo-google-fonts/poppins';
-import Animated, { Easing, useAnimatedStyle, withTiming } from 'react-native-reanimated';
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
@@ -19,24 +18,12 @@ export default function App() {
     return null;
   }
 
-   const animConfig = {
-    duration: 500,
-    easing: Easing.bezier(0.5, 0.01, 0, 1),
-  };
-
-  // const animStyle = useAnimatedStyle(() => {
-  //   return {
-  //     opacity: withTiming(100, animConfig),
-  //   };
-  // });
-
 
   return (
     <SafeAreaProvider>
     <SafeAreaView style={[styles.container, themeContainerStyle]}>
-      {/* <Animated.View style={[animStyle]}> */}
+
         <Text style={[styles.text, themeTextStyle]}>CONTROLIFY APP</Text>
-      {/* </Animated.View> */}
       <StatusBar style="auto" />
     </SafeAreaView>
     </SafeAreaProvider>
